@@ -4,7 +4,7 @@ namespace FactoryMethod
 {
     class Company
     {
-        public Company()
+        public Company(ITransportFactory transportFactory)
         {
 
         }

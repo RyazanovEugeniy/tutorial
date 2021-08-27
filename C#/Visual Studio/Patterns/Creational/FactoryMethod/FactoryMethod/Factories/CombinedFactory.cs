@@ -13,7 +13,7 @@ namespace FactoryMethod.Factories
 
         public override string ToString() // реализуем приведение экземпляра класс к строке
         {
-            return "Компания комбинированного типа";
+            return "Компания смешанного типа";
         }
     }
 }

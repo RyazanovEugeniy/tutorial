@@ -6,7 +6,7 @@ namespace FactoryMethod.Factories
 {
     class SeaFactory : ITransportFactory
     {
-        public ITransportFactory Create()
+        public ITransport Create()
         {
             return new SeaTransport();
         }

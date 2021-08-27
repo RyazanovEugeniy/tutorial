@@ -2,6 +2,6 @@
 {
     interface ITransportFactory
     {
-        void Create();
+        ITransport Create();
     }
 }
