@@ -1,0 +1,14 @@
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.exe
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.deps.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.runtimeconfig.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.runtimeconfig.dev.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.dll
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\bin\Debug\netcoreapp3.1\FactoryMethod.pdb
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.csproj.AssemblyReference.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.AssemblyInfoInputs.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.AssemblyInfo.cs
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.csproj.CoreCompileInputs.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.dll
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.pdb
+D:\git\tutorial\C#\Visual Studio\Patterns\Creational\FactoryMethod\FactoryMethod\obj\Debug\netcoreapp3.1\FactoryMethod.genruntimeconfig.cache
