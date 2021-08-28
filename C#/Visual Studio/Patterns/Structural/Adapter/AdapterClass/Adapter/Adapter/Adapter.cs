@@ -2,8 +2,8 @@
 
 namespace Adapter
 {
-    // Интерфейс необходимый для реализации
-    public interface IMachine
+    // Пользовательский интерфейс необходимый для реализации
+    interface IMachine
     {
         void Work();
     }
