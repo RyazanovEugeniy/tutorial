@@ -1,6 +1,4 @@
-﻿using System;
-
-using FactoryMethod.Transport;
+﻿using FactoryMethod.Transport;
 
 namespace FactoryMethod.Factory
 {
