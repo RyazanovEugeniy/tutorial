@@ -2,7 +2,7 @@
 
 using FactoryMethod.Transport;
 
-namespace FactoryMethod.Factories
+namespace FactoryMethod.Factory
 {
     // Фабрика выпускающая только дорожный транспорт
     class RoadFactory : ITransportFactory

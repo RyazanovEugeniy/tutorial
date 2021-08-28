@@ -1,9 +1,11 @@
 ﻿using System;
 
-using FactoryMethod.Factories;
+using FactoryMethod.Factory;
 
 namespace FactoryMethod
 {
+    // Суть фабричного метода - разработка класса отвечающего за создание объекта
+    // Это упрощает расширение кода в случае необходимости добавления объектов нового типа 
     class Program
     {
         static void Main(string[] args)
