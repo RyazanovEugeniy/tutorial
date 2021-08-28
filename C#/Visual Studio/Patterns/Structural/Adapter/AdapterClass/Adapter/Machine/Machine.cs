@@ -1,10 +1,12 @@
 ﻿using System;
 
-namespace Adapter.Machine
+namespace Adapter
 {
+    // Класс, недоступный для изменения
     class Machine
     {
-        void DoWork()
+        // И его работа
+        protected void DoWork()
         {
             Console.WriteLine("Работаю");
         }
