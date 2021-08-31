@@ -14,7 +14,7 @@ namespace Adapter
         // Создаем экземпляр класса Machine
         Machine machine = new Machine();
 
-        // Реализуем наш интерфейс, с помощью экзепляра класса
+        // Реализуем наш интерфейс, с помощью экземпляра класса
         public void Work()
         {
             machine.DoWork();
