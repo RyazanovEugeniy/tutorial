@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Adapter
 {
     // Класс, недоступный для изменения
@@ -8,7 +9,7 @@ namespace Adapter
         // И его работа
         public void DoWork()
         {
-            Console.WriteLine("Работаю");
+            Console.WriteLine("Work");
         }
     }
 }
