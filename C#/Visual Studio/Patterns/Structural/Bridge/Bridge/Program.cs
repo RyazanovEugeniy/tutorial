@@ -4,9 +4,9 @@ namespace Bridge
 {
     class Client
     {
-        public void ClientCode(AbstractFigure abstractFigure)
+        public void ClientCode(Figure figure)
         {
-            Console.Write(abstractFigure.Info());
+            Console.Write(figure.Info());
         }
     }
 
@@ -16,7 +16,7 @@ namespace Bridge
         {
             Client client = new Client();
 
-            AbstractFigure figure;
+            Figure figure;
 
             figure = new Cube(new Red());
             client.ClientCode(figure);

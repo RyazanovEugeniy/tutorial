@@ -1,0 +1,14 @@
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.exe
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.deps.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.runtimeconfig.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.runtimeconfig.dev.json
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.dll
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\bin\Debug\netcoreapp3.1\Composite.pdb
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.csproj.AssemblyReference.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.AssemblyInfoInputs.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.AssemblyInfo.cs
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.csproj.CoreCompileInputs.cache
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.dll
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.pdb
+D:\git\tutorial\C#\Visual Studio\Patterns\Structural\Composite\Composite\obj\Debug\netcoreapp3.1\Composite.genruntimeconfig.cache

@@ -2,11 +2,11 @@
 
 namespace Bridge
 {
-    class AbstractFigure
+    class Figure
     {
         protected IColor color;
 
-        public AbstractFigure(IColor color)
+        public Figure(IColor color)
         {
             this.color = color;
         }
@@ -18,7 +18,7 @@ namespace Bridge
         }
     }
 
-    class Cube : AbstractFigure
+    class Cube : Figure
     {
         public Cube(IColor color) : base(color)
         {
@@ -31,7 +31,7 @@ namespace Bridge
         }
     }
 
-    class Sphere : AbstractFigure
+    class Sphere : Figure
     {
         public Sphere(IColor color) : base(color)
         {
@@ -44,7 +44,7 @@ namespace Bridge
         }
     }
 
-    class Pyramid : AbstractFigure
+    class Pyramid : Figure
     {
         public Pyramid(IColor color) : base(color)
         {
