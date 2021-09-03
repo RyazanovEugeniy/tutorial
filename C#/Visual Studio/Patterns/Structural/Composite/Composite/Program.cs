@@ -2,20 +2,10 @@
 
 namespace Composite
 {
-    class Client
-    {
-        public void ClientCode(Component component)
-        {
-            Console.WriteLine($"Composite: {component.GetInfo()}\n");
-        }
-    }
-
     class Program 
     {
         static void Main(string[] args)
         {
-            Client client = new Client();
-
             Branch tree = new Branch();
             Branch branch1 = new Branch();
             branch1.Add(new Leaf());
@@ -28,7 +18,7 @@ namespace Composite
             branch2.Add(branch3);
             branch3.Add(new Leaf());
 
-            client.ClientCode(tree);
+            Console.WriteLine($"Composite: {tree.GetInfo()}\n");
 
             Console.ReadKey();
         }

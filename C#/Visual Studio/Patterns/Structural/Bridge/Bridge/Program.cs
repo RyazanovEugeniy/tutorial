@@ -2,32 +2,29 @@
 
 namespace Bridge
 {
-    class Client
-    {
-        public void ClientCode(Figure figure)
-        {
-            Console.Write(figure.Info());
-        }
-    }
-
+    // Суть шаблона Мост - при имеющихся двух иерархиях классов,
+    // в данном примере, фигуре и цвете, заменить наследование на ассоциацию (агрегацию или композицию),
+    // иначе при наследовании количество комбинацию фигур и цветов будет возврастать в геометрической прогрессии
     class Program
     {
         static void Main(string[] args)
         {
-            Client client = new Client();
-
             Figure figure;
 
+            // Создаем красный куб
             figure = new Cube(new Red());
-            client.ClientCode(figure);
+            Console.Write(figure.Info());
 
+            // Создаем красную пирамиду
             figure = new Pyramid(new Red());
-            client.ClientCode(figure);
+            Console.Write(figure.Info());
+            // Создаем синию пирамиду
             figure = new Pyramid(new Blue());
-            client.ClientCode(figure);
+            Console.Write(figure.Info());
 
             figure = new Sphere(new Green());
-            client.ClientCode(figure);
+            // Создаем зеленую сферу
+            Console.Write(figure.Info());
 
             Console.ReadKey();
         }
