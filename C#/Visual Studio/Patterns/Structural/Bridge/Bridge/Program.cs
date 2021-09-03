@@ -13,18 +13,18 @@ namespace Bridge
 
             // Создаем красный куб
             figure = new Cube(new Red());
-            Console.Write(figure.Info());
+            Console.Write(figure.GetInfo());
 
             // Создаем красную пирамиду
             figure = new Pyramid(new Red());
-            Console.Write(figure.Info());
+            Console.Write(figure.GetInfo());
             // Создаем синию пирамиду
             figure = new Pyramid(new Blue());
-            Console.Write(figure.Info());
+            Console.Write(figure.GetInfo());
 
             figure = new Sphere(new Green());
             // Создаем зеленую сферу
-            Console.Write(figure.Info());
+            Console.Write(figure.GetInfo());
 
             Console.ReadKey();
         }

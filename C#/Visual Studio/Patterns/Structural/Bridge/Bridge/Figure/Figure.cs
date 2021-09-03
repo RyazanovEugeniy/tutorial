@@ -14,8 +14,8 @@ namespace Bridge
         }
 
         // Метод фигуры по возвращению ее названия и цвета фигуры, используя интерфейс цвета
-        // Который будем переопределять в методах наследниках
-        public virtual string Info()
+        // Который будем замещать в методах наследниках
+        public virtual string GetInfo()
         {
             return "AbstractFigure: " +
                 color.GetColor();
@@ -30,7 +30,7 @@ namespace Bridge
         {
         }
 
-        public override string Info()
+        public override string GetInfo()
         {
             return "Cube: " +
                 base.color.GetColor();
@@ -44,7 +44,7 @@ namespace Bridge
         {
         }
 
-        public override string Info()
+        public override string GetInfo()
         {
             return "Sphere: " +
                 base.color.GetColor();
@@ -58,7 +58,7 @@ namespace Bridge
         {
         }
 
-        public override string Info()
+        public override string GetInfo()
         {
             return "Pyramid: " +
                 base.color.GetColor();
