@@ -2,11 +2,14 @@
 
 namespace Bridge
 {
+    // Создаем интерфейс IColor
     public interface IColor
     {
+        // Который вынуждает классы реализовать метод GetColor
         string GetColor();
     }
 
+    // Класс красный, которому необходимо реализовать методы интерфейса IColor
     class Red : IColor
     {
         public string GetColor()
@@ -15,6 +18,7 @@ namespace Bridge
         }
     }
 
+    // Класс синий, которому необходимо реализовать методы интерфейса IColor
     class Blue : IColor
     {
         public string GetColor()
@@ -23,6 +27,7 @@ namespace Bridge
         }
     }
 
+    // Класс зеленый, которому необходимо реализовать методы интерфейса IColor
     class Green : IColor
     {
         public string GetColor()
