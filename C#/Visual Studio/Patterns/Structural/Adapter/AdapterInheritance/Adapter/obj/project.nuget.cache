@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ieO4AUgMf1ayFZ5fvZEs2BBtUrJa+FlzeuZjKJLcQGVToPiQpj7Zv63ElnPAqYADAOz2Vd1Ay8rmrJk6gqVJyg==",
+  "dgSpecHash": "S8RdiNy/v3rNLnwLyr1d/cu3V4Eoa9TH4a4bAt/tPoWVMxxboi26oEH+XT8t8HBRiF1mzM7831ZGHNVe2DRr6A==",
   "success": true,
-  "projectFilePath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterClass\\Adapter\\Adapter.csproj",
+  "projectFilePath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterInheritance\\Adapter\\Adapter.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

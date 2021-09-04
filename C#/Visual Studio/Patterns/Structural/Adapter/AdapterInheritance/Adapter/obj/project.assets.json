@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterClass\\Adapter\\Adapter.csproj",
+      "projectUniqueName": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterInheritance\\Adapter\\Adapter.csproj",
       "projectName": "Adapter",
-      "projectPath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterClass\\Adapter\\Adapter.csproj",
+      "projectPath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterInheritance\\Adapter\\Adapter.csproj",
       "packagesPath": "C:\\Users\\ryaza\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterClass\\Adapter\\obj\\",
+      "outputPath": "D:\\git\\tutorial\\C#\\Visual Studio\\Patterns\\Structural\\Adapter\\AdapterInheritance\\Adapter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ryaza\\AppData\\Roaming\\NuGet\\NuGet.Config",
