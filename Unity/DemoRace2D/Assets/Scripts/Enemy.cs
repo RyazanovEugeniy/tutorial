@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MoveOtherCars : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float speed = 2.0f;
+
     void FixedUpdate()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
