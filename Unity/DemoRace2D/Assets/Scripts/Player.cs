@@ -16,4 +16,12 @@ public class Player : MonoBehaviour
 
         transform.Translate(dir.normalized * Time.deltaTime * speed);
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
