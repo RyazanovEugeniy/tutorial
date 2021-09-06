@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 0.5f;
+    public float speed = 1.5f;
     void Update()
     {
         //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);

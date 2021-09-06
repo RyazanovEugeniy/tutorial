@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 2.0f;
+    public float speed = 3.0f;
 
     void FixedUpdate()
     {

@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class Road : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 2f;
     public GameObject road;
     void FixedUpdate()
     {
