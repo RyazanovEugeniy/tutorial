@@ -1,2 +1,1 @@
-# tutorial
-# Code is free
+# Tutorial. Code is free
