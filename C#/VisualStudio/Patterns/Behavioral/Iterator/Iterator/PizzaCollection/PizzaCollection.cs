@@ -98,6 +98,7 @@ namespace Iterator.Pizzas
             // Ибо как оказалось foreach не делает сброса методом Reset =(
             position = collection.getCollection().Count - 1;
 
+            // Записываем коллекцию
             this.collection = collection;
         }
 

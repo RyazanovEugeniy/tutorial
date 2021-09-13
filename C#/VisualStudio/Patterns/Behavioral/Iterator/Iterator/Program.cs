@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 using Iterator.Words;
 using Iterator.Pizzas;
@@ -51,9 +53,6 @@ namespace Iterator
             pizzaCollection.Add(new Pizza("4", 116.0f, 750.0f));
             pizzaCollection.Add(new Pizza("5", 117.0f, 750.0f));
             pizzaCollection.Add(new Pizza("6", 118.0f, 750.0f));
-            pizzaCollection.Add(new Pizza("7", 119.0f, 750.0f));
-            pizzaCollection.Add(new Pizza("8", 121.0f, 750.0f));
-            pizzaCollection.Add(new Pizza("9", 116.0f, 750.0f));
 
             Console.WriteLine();
             Console.WriteLine("Пицца");
@@ -63,6 +62,21 @@ namespace Iterator
             {
                 pizza.price = pizza.weight * 6;
                 Console.WriteLine("Пицца: " + pizza + " Вес, г.: " + pizza.weight + " Цена, р.: " + pizza.price);
+            }
+
+            // Обход по ReverseIterator, не через foreach
+            Console.WriteLine();
+            Console.WriteLine("Ради интереса, реализация не через foreach, ReverseIterator");
+
+            IEnumerator reverseIterator = new ReverseIterator(pizzaCollection);
+
+            Pizza pizzaTest;
+            while (reverseIterator.MoveNext())
+            {
+                pizzaTest = (Pizza) reverseIterator.Current;
+
+                pizzaTest.price = pizzaTest.weight * 6;
+                Console.WriteLine("Пицца: " + pizzaTest + " Вес, г.: " + pizzaTest.weight + " Цена, р.: " + pizzaTest.price);
             }
 
             Console.ReadKey();
