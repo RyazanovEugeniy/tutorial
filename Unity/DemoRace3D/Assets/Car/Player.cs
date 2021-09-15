@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Vector3 dir = new Vector3(0, Input.GetAxisRaw("Vertical"), 0);
+        Vector3 dir = new Vector3(0, 0, Input.GetAxisRaw("Vertical"));
         Vector3 rotate = new Vector3(0, Input.GetAxisRaw("Horizontal"), 0);
 
         transform.Translate(dir.normalized * Time.deltaTime * longitudinalSpeed);
