@@ -2,104 +2,42 @@
 
 namespace Mediator
 {
-    public interface IMediator
-    {
-        void Notify(object sender, string ev);
-    }
+    // Суть шаблона Mediator - создание класса посредника,
+    // в который выносится исполнительный код,
+    // что позволяет сохранить уровень абстракции классов,
+    // из которых этот код изымается, что в свою очередь дает,
+    // возможность более гибкого использования этих классов.
 
-    class ConcreteMediator : IMediator
-    {
-        private Component1 component1;
-
-        private Component2 component2;
-
-        public ConcreteMediator(Component1 component1, Component2 component2)
-        {
-            this.component1 = component1;
-            this.component1.SetMediator(this);
-            this.component2 = component2;
-            this.component2.SetMediator(this);
-        }
-
-        public void Notify(object sender, string ev)
-        {
-            if (ev == "A")
-            {
-                Console.WriteLine("Mediator reacts on A and triggers folowing operations:");
-                this.component2.DoC();
-            }
-            if (ev == "D")
-            {
-                Console.WriteLine("Mediator reacts on D and triggers following operations:");
-                this.component1.DoB();
-                this.component2.DoC();
-            }
-        }
-    }
-
-    class BaseComponent
-    {
-        protected IMediator _mediator;
-
-        public BaseComponent(IMediator mediator = null)
-        {
-            this._mediator = mediator;
-        }
-
-        public void SetMediator(IMediator mediator)
-        {
-            this._mediator = mediator;
-        }
-    }
-    class Component1 : BaseComponent
-    {
-        public void DoA()
-        {
-            Console.WriteLine("Component 1 does A.");
-
-            this._mediator.Notify(this, "A");
-        }
-
-        public void DoB()
-        {
-            Console.WriteLine("Component 1 does B.");
-
-            this._mediator.Notify(this, "B");
-        }
-    }
-
-    class Component2 : BaseComponent
-    {
-        public void DoC()
-        {
-            Console.WriteLine("Component 2 does C.");
-
-            this._mediator.Notify(this, "C");
-        }
-
-        public void DoD()
-        {
-            Console.WriteLine("Component 2 does D.");
-
-            this._mediator.Notify(this, "D");
-        }
-    }
-
+    // В данном примере есть класс посредник,
+    // в котором есть список объектов класса Button
+    // При добавлении кнопки в класс посредник происходит запись
+    // этого посредника в защищенное поле кнопки
+    // После нажатия кнопки происходит вызов
+    // метода Notify, т.е. уведомления класса Mediator о событии
+    // и происходит обработка события, уже в самом посреднике.
     class Program
     {
         static void Main(string[] args)
         {
-            Component1 component1 = new Component1();
-            Component2 component2 = new Component2();
-            new ConcreteMediator(component1, component2);
+            // Создаем наш медиатор
+            Mediator mediator = new Mediator();
 
-            Console.WriteLine("Client triggets operation A.");
-            component1.DoA();
+            // Создаем кнопочки
+            Button button1 = new Button("Button1");
+            Button button2 = new Button("Button2");
+            Button button3 = new Button("Button3");
 
-            Console.WriteLine();
+            // Добавляем кнопочки;)
+            mediator.AddButton(button1);
+            mediator.AddButton(button2);
+            mediator.AddButton(button3);
 
-            Console.WriteLine("Client triggers operation D.");
-            component2.DoD();
+            // Вызываем случайный набор сигналов
+            button1.Clicked();
+            button2.Released();
+            button3.Clicked();
+            button1.Released();
+            button2.Clicked();
 
             Console.ReadKey();
         }
