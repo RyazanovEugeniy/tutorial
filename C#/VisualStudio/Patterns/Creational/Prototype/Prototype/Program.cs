@@ -2,62 +2,83 @@
 
 namespace Prototype
 {
-    class MegaClass
-    {
-        public int number = 0;
-
-        public MegaClass() { }
-    }
-
+    // Суть шаблона Prototype - делегирование копирования объекта самому объекту,
+    // ибо извне красиво и быстро это сделать нет возможности,
+    // сооветственно создается метод в классе, который создает объект с характеристиками текущего,
+    // и возвращает его в место запроса.
     class Program
     {
         static void Main(string[] args)
         {
-            MegaClass megaClass = new MegaClass();
-            megaClass.number = 2;
-            Console.WriteLine("megaClass.number == " + megaClass.number);
+            // Пример того, как работает поверхностное копирование объекта (метод MemberwiseClone)
+            // и какие проблемы это вызывает.
 
-            MegaClass megaClass2 = megaClass;
+            // Создаем класс MegaClass, оператор new
+            // выделяет память и создает объект нужного типа
+            // и возвращает ссылку на него в пункт запроса
+            // соответственно в megaClass1 записывается эта ссылка
+            MegaClass megaClass1 = new MegaClass();
+            megaClass1.number = 1;
+            Console.WriteLine("megaClass1.number == " + megaClass1.number);
+            // Создадим так же не ссылочный тип данных
+            int testInt1 = 1;
+            Console.WriteLine("testInt1 == " + testInt1);
+
+            // Объявим еще один MegaClass и запишем в него уже созданный megaClass1
+            // Здесь проявляется собственно проблема,
+            // записывается только ссылка из megaClass1 в megaClass2
+            MegaClass megaClass2 = megaClass1;
             Console.WriteLine("megaClass2.number == " + megaClass2.number);
+            // Чего не происходит здесь, ибо int не является ссылочным типом данных,
+            // он выделит память и создаст переменную типа int, и запишет в нее значение из testInt1
+            int testInt2 = testInt1;
+            Console.WriteLine("testInt2 == " + testInt2);
 
-            megaClass.number = 1;
+            // И когда мы изменяем megaClass1, то на самом деле мы изменяем объект
+            // который находится по ссылке из megaClass1,
+            // таким образом мы изменяем и megaClass2,
+            // так как в нем находится та же ссылка
+            Console.WriteLine("After changes in megaClass1.number and testInt1");
+            megaClass1.number = 2;
             Console.WriteLine("megaClass2.number == " + megaClass2.number);
-            Console.WriteLine();
+            // Чего не происходит с нашим добрым интом
+            testInt1 = 2;
+            Console.WriteLine("testInt2 == " + testInt2 + "\n");
 
+            // Теперь провернем это с нашим прототипом Car
+            // Создаем объект типа Car, ссылка на который запишется в
+            // объявленную переменную car1 типа Car
+            Car car1 = new Car("Toyota", 120, 142.3f);
 
-            Person p1 = new Person();
-            p1.Age = 42;
-            p1.BirthDate = Convert.ToDateTime("1977-01-01");
-            p1.Name = "Jack Daniels";
-            p1.IdInfo = new IdInfo(666);
+            // Объявим car2, и выполним поверхностное копирование из car1 в car2
+            Car car2 = car1.ShallowCopy();
+            // Объявим car3, и выполним глубокое копирование из car1 в car3
+            Car car3 = car1.DeepCopy();
 
-            // Выполнить поверхностное копирование p1 и присвоить её p2.
-            Person p2 = p1.ShallowCopy();
-            // Сделать глубокую копию p1 и присвоить её p3.
-            Person p3 = p1.DeepCopy();
+            // Выведем текущие состояния объектов
+            Console.WriteLine("car1");
+            car1.Information();
+            Console.WriteLine("car2");
+            car2.Information();
+            Console.WriteLine("car3");
+            car3.Information();
 
-            // Вывести значения p1, p2 и p3.
-            Console.WriteLine("Original values of p1, p2, p3:");
-            Console.WriteLine("   p1 instance values: ");
-            p1.DisplayValues();
-            Console.WriteLine("   p2 instance values:");
-            p2.DisplayValues();
-            Console.WriteLine("   p3 instance values:");
-            p3.DisplayValues();
+            // А теперь изменим car1, и посмотрим, что произошло с car2 и car3
+            car1.engine.factoryNumber = 125;
+            car1.engine.power = 123.47f;
+            car1.name = "Mitsubishi";
+            Console.WriteLine("\nAfter changes in car1");
+            Console.WriteLine("car1");
+            car1.Information();
+            Console.WriteLine("car2");
+            car2.Information();
+            Console.WriteLine("car3");
+            car3.Information();
 
-            // Изменить значение свойств p1 и отобразить значения p1, p2 и p3.
-            p1.Age = 32;
-            p1.BirthDate = Convert.ToDateTime("1900-01-01");
-            p1.Name = "Frank";
-            p1.IdInfo.IdNumber = 7878;
-            Console.WriteLine("\nValues of p1, p2 and p3 after changes to p1:");
-            Console.WriteLine("   p1 instance values: ");
-            p1.DisplayValues();
-            Console.WriteLine("   p2 instance values (reference values have changed):");
-            p2.DisplayValues();
-            Console.WriteLine("   p3 instance values (everything was kept the same):");
-            p3.DisplayValues();
-
+            // Как видим при поверхностном копировании,
+            // ссылочные типы данных сохраняют свою привязку к старым объектам
+            // Таким образом приходится выполнять их глубокое их копирование,
+            // то есть создание новых объектов, на которые они ссылаются
             Console.ReadKey();
         }
     }
