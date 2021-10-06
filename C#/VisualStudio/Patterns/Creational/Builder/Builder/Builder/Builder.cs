@@ -19,7 +19,7 @@
 
         public Builder()
         {
-            this.home = new Home();
+            this.Reset();
         }
 
         public void Reset()
