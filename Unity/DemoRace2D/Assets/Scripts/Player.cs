@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene(2);
-            Destroy(gameObject);
+            //SceneManager.LoadScene(2);
+            //Destroy(gameObject);
         }
     }
 }
