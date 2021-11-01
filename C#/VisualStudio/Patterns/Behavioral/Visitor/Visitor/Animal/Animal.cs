@@ -9,50 +9,35 @@ namespace Visitor
 
     public class Cat : IAnimal
     {
-        public void Accept(IVisitor visitor)
-        {
-            visitor.Make(this);
-        }
+        public void Accept(IVisitor visitor) => visitor.Do(this);
     }
 
     public class Dog : IAnimal
     {
         public void Accept(IVisitor visitor)
         {
-            visitor.Make(this);
+            visitor.Do(this);
         }
     }
 
     public interface IVisitor
     {
-        void Make(Cat cat);
+        void Do(Cat cat);
 
-        void Make(Dog dog);
+        void Do(Dog dog);
     }
 
     class Move : IVisitor
     {
-        public void Make(Cat cat)
-        {
-            Console.WriteLine(this.GetType().Name);
-        }
+        public void Do(Cat cat) => Console.WriteLine(cat.GetType().Name + " " + this.GetType().Name);
 
-        public void Make(Dog dog)
-        {
-            Console.WriteLine(this.GetType().Name);
-        }
+        public void Do(Dog dog) => Console.WriteLine(dog.GetType().Name + " " + this.GetType().Name);
     }
 
     class Speak : IVisitor
     {
-        public void Make(Cat lightCargo)
-        {
-            Console.WriteLine(this.GetType().Name);
-        }
+        public void Do(Cat cat) => Console.WriteLine(cat.GetType().Name + " " + this.GetType().Name);
 
-        public void Make(Dog heavyCargo)
-        {
-            Console.WriteLine(this.GetType().Name);
-        }
+        public void Do(Dog dog) => Console.WriteLine(dog.GetType().Name + " " + this.GetType().Name);
     }
 }
