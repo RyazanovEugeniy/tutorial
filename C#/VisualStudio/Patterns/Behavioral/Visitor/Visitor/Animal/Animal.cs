@@ -14,10 +14,7 @@ namespace Visitor
 
     public class Dog : IAnimal
     {
-        public void Accept(IVisitor visitor)
-        {
-            visitor.Do(this);
-        }
+        public void Accept(IVisitor visitor) => visitor.Do(this);
     }
 
     public interface IVisitor
