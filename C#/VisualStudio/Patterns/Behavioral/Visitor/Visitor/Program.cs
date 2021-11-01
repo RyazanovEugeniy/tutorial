@@ -7,22 +7,22 @@ namespace Visitor
     {
         static void Main(string[] args)
         {
-            List<ICargo> cargoList = new List<ICargo>
+            List<IAnimal> animals = new List<IAnimal>
             {
-                new LightCargo(),
-                new HeavyCargo(),
-                new LightCargo(),
-                new LightCargo()
+                new Cat(),
+                new Dog(),
+                new Cat(),
+                new Cat()
             };
 
-            var transportCompany1 = new TransportCompany1();
-            foreach (ICargo cargo in cargoList)
-                cargo.Deliver(transportCompany1);
+            var move = new Move();
+            foreach (IAnimal animal in animals)
+                animal.Accept(move);
 
 
-            var transportCompany2 = new TransportCompany2();
-            foreach (ICargo transport in cargoList)
-                transport.Deliver(transportCompany2);
+            var speak = new Speak();
+            foreach (IAnimal animal in animals)
+                animal.Accept(speak);
 
             Console.ReadKey();
         }
