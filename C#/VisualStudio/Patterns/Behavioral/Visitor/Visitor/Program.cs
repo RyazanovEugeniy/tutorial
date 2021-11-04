@@ -19,7 +19,6 @@ namespace Visitor
             foreach (IAnimal animal in animals)
                 animal.Accept(move);
 
-
             var speak = new Speak();
             foreach (IAnimal animal in animals)
                 animal.Accept(speak);
