@@ -1,7 +1,7 @@
 ﻿
 namespace TestSql
 {
-    partial class RegisterForm
+    partial class RegistrationForm
     {
         /// <summary>
         /// Required designer variable.

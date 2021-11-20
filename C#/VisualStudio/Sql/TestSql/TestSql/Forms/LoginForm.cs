@@ -13,8 +13,9 @@ namespace TestSql
 {
     public partial class LoginForm : Form
     {
+        private RegistrationForm registrationForm;
         private Point lastPoint;
-
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -71,8 +72,9 @@ namespace TestSql
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var registrationForm = new RegisterForm();
-            registrationForm.Show();
+            if (registrationForm == null)
+                registrationForm = new RegistrationForm();
+            registrationForm.ShowDialog();
         }
     }
 }

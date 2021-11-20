@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TestSql
 {
-    public partial class RegisterForm : Form
+    public partial class RegistrationForm : Form
     {
-        public RegisterForm()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
