@@ -9,16 +9,17 @@ namespace Delegates1
         {
             Animal animal = new Animal();
 
-            Action<string> action = PrintMessage;
+            Func<string, string> func = PrintMessage;
 
-            animal.Move(20, action);
+            animal.Move(20, func);
 
             Console.ReadKey();
         }
 
-        static void PrintMessage(string message)
+        static string PrintMessage(string message)
         {
             Console.WriteLine(message);
+            return message;
         }
     }
 }
