@@ -71,6 +71,7 @@ namespace Iterator
             IEnumerator reverseIterator = new ReverseIterator(pizzaCollection);
 
             Pizza pizzaTest;
+
             while (reverseIterator.MoveNext())
             {
                 pizzaTest = (Pizza) reverseIterator.Current;
