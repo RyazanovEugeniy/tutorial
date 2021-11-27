@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Threading;
 
-namespace Delegates2
+namespace Delegates4
 {
     public class MovingEventArgs : EventArgs
     {
         public string Message { get; private set; }
 
-        public MovingEventArgs(string message)
-        {
-            Message = message;
-        }
+        public MovingEventArgs(string message) => Message = message;
     }
 
     class Animal
@@ -25,6 +22,8 @@ namespace Delegates2
 
                 if (Moving != null)
                     Moving(this, new MovingEventArgs($"Animal moving... Current distance: {i}"));
+                else
+                    Console.WriteLine("Moving == null");
             }
         }
     }

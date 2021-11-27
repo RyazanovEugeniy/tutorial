@@ -5,12 +5,20 @@ namespace Delegates1
 {
     class Animal
     {
-        public void Move(int distance, DoSmthWithMessage doSmthWithMessage)
+        private DoSmthWithMessage doSmthWithMessage;
+
+        public void setDoSmthWithMessage(DoSmthWithMessage doSmthWithMessage) => this.doSmthWithMessage = doSmthWithMessage;
+
+        public void Move(int distance)
         {
             for (int i = 0; i < distance; i++)
             {
                 Thread.Sleep(1000);
-                doSmthWithMessage($"Animal moving... Current distance: {i}");
+
+                if (doSmthWithMessage != null)
+                    doSmthWithMessage($"Animal moving... Current distance: {i}");
+                else
+                    Console.WriteLine("doSmthWithMessage == null");
             }
         }
     }

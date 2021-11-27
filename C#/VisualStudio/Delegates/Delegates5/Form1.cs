@@ -27,7 +27,7 @@ namespace Delegates5
 
         private void button1_Click2(object sender, EventArgs e)
         {
-            MessageBox.Show("!!!" + e.ToString());
+            MessageBox.Show(e.ToString());
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Delegates1
+namespace Delegates3
 {
     class Program
     {
@@ -9,9 +9,10 @@ namespace Delegates1
         {
             Animal animal = new Animal();
 
-            Func<string, string> func = PrintMessage;
+            animal.Move(3);
 
-            animal.Move(20, func);
+            animal.setFunc(PrintMessage);
+            animal.Move(3);
 
             Console.ReadKey();
         }

@@ -11,9 +11,10 @@ namespace Delegates1
         {
             Animal animal = new Animal();
 
-            DoSmthWithMessage doSmthWithMessage = PrintMessage;
+            animal.Move(3);
 
-            animal.Move(20, doSmthWithMessage);
+            animal.setDoSmthWithMessage(PrintMessage);
+            animal.Move(3);
 
             Console.ReadKey();
         }

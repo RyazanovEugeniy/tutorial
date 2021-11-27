@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Threading;
 
-namespace Delegates1
+namespace Delegates2
 {
     class Animal
     {
-        public void Move(int distance, Action<string> action)
+        private Action<string> action;
+
+        public void setAction(Action<string> action) => this.action = action;
+
+        public void Move(int distance)
         {
             for (int i = 0; i < distance; i++)
             {
                 Thread.Sleep(1000);
-                action($"Animal moving... Current distance: {i}");
+
+                if (action != null)
+                    action($"Animal moving... Current distance: {i}");
+                else
+                    Console.WriteLine("action == null");
             }
         }
     }
