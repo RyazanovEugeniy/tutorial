@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Adapter
+namespace AdapterInheritance
 {
     // Суть шаблона Адаптер - реализация интерфейса,
     // предназначенного для использования методов класса,

@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace Adapter
+namespace AdapterAssociation
 {
     // Класс, недоступный для изменения
     class Machine

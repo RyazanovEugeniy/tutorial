@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Adapter
+namespace AdapterInheritance
 {
     // Класс, недоступный для изменения
     class Machine

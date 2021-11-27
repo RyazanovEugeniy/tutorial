@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Adapter
+namespace AdapterAssociation
 {
     // Интерфейс необходимый для реализации
     interface IMachine

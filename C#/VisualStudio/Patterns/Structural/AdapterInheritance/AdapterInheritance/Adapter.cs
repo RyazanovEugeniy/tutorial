@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Adapter
+namespace AdapterInheritance
 {
     // Пользовательский интерфейс необходимый для реализации
     interface IMachine
