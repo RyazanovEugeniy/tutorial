@@ -10,10 +10,10 @@ namespace AdapterInheritance
         static void Main(string[] args)
         {
             // Создаем наш адаптерн
-            Adapter adapter = new Adapter();
+            IMachine machine = new Adapter();
 
             // Заставляем его работать, с помощью пользовательского интерфейса
-            adapter.Work();
+            machine.Work();
 
             Console.ReadKey();
         }
