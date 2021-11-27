@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LambdaExpression
+namespace LambdaExpression1
 {
     delegate int Operation(int x, int y);
 
