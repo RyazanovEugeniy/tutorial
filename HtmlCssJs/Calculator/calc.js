@@ -68,7 +68,7 @@ document.querySelector('.buttons').onclick = (event) =>
                 else
                 {
                     clearAll();
-                    out.textContent = 'null';
+                    out.textContent = 'error';
                     return;
                 }
                 break;
