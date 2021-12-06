@@ -17,14 +17,13 @@ function clearAll() {
 
 document.querySelector('.buttons').onclick = (event) => 
 {
-    out.textContent = a;
-
     if (!event.target.classList.contains('btn'))
         return;
 
     if (event.target.classList.contains('ac'))
     {
         clearAll();
+        out.textContent = a;
         return;
     }
 
@@ -58,7 +57,8 @@ document.querySelector('.buttons').onclick = (event) =>
 
     if (key === '=')
     {
-        switch (sign) {
+        switch (sign) 
+        {
             case '*':
                 a *= b;
                 break;
@@ -77,6 +77,8 @@ document.querySelector('.buttons').onclick = (event) =>
                 break;
             case '-':
                 a -= b;
+                break;
+            default:
                 break;
         }
 
