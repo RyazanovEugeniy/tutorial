@@ -1,4 +1,4 @@
-let a = '';
+let a = '0';
 let b = '';
 let sign = '';
 let finish = false;
@@ -9,16 +9,15 @@ const action = ['-', '+', '*', '/'];
 const out = document.querySelector('.calc-screen p');
 
 function clearAll() {
-    a = '';
+    a = '0';
     b = '';
     sign = '';
     finish = false;
-    out.textContent = 0;
 }
 
 document.querySelector('.buttons').onclick = (event) => 
 {
-    out.textContent = '';
+    out.textContent = a;
 
     if (!event.target.classList.contains('btn'))
         return;
@@ -35,7 +34,7 @@ document.querySelector('.buttons').onclick = (event) =>
     {
         if (sign == '')
         {
-            if (finish == false)
+            if (finish == false && a != 0)
                 a += key;
             else
                 a = key;
@@ -43,8 +42,11 @@ document.querySelector('.buttons').onclick = (event) =>
         }
         else
         {
-            b += key;
-            out.textContent += b;
+            if (b != 0)
+                b += key;
+            else
+                b = key;
+            out.textContent = b;
         }
     }
     
@@ -54,24 +56,29 @@ document.querySelector('.buttons').onclick = (event) =>
         out.textContent = sign;
     }
 
-    if (event.target.classList.contains('equal'))
+    if (key === '=')
     {
-        if (sign === '*')
-            a *= b;
-        if (sign === '/')
-        {
-            if (b != 0)
-                a /= b;
-            else
-            {
-                out.textContent = 'null';
-                return;
-            }
+        switch (sign) {
+            case '*':
+                a *= b;
+                break;
+            case '/':
+                if (b != 0)
+                    a /= b;
+                else
+                {
+                    clearAll();
+                    out.textContent = 'null';
+                    return;
+                }
+                break;
+            case '+':
+                a = (+a) + (+b);
+                break;
+            case '-':
+                a -= b;
+                break;
         }
-        if (sign === '+')
-            a += b;
-        if (sign === '-')
-            a -= b;
 
         out.textContent = a;
         finish = true;
