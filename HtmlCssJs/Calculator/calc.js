@@ -8,7 +8,8 @@ const action = ['-', '+', '*', '/'];
 
 const out = document.querySelector('.calc-screen p');
 
-function clearAll() {
+function clearAll() 
+{
     a = '0';
     b = '';
     sign = '';
@@ -20,42 +21,70 @@ document.querySelector('.buttons').onclick = (event) =>
     if (!event.target.classList.contains('btn'))
         return;
 
-    if (event.target.classList.contains('ac'))
+    const text = event.target.textContent;
+
+    if (text === 'ac')
     {
         clearAll();
         out.textContent = a;
         return;
     }
 
-    const key = event.target.textContent;
+    if (text === '%')
+    {
+        if (sign == '')
+        {
+            a = 0;
+            out.textContent = a;
+        }
+        else
+        {
+            b = a * b / 100;
+            out.textContent = b;
+        }
+    }
 
-    if (digit.includes(key))
+    if (text === '+/-')
+    {
+        if (sign == '')
+        {
+            a *= -1;
+            out.textContent = a;
+        }
+        else
+        {
+            b *= -1;
+            out.textContent = b;
+        }
+    }
+
+    if (digit.includes(text))
     {
         if (sign == '')
         {
             if (finish == false && a != 0)
-                a += key;
+                a += text;
             else
-                a = key;
+                a = text;
             out.textContent = a;
         }
         else
         {
             if (b != 0)
-                b += key;
+                b += text;
             else
-                b = key;
+                b = text;
             out.textContent = b;
         }
     }
     
-    if (action.includes(key))
+    if (action.includes(text))
     {
-        sign = key;
+        sign = text;
         out.textContent = sign;
     }
 
-    if (key === '=')
+    if (text === '=')
     {
         switch (sign) 
         {
