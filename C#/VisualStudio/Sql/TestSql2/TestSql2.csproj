@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Db.cs" />
+    <Compile Include="SqlServer.cs" />
     <Compile Include="Forms\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>

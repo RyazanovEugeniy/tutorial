@@ -14,12 +14,12 @@ namespace TestSql2
     public partial class LoginForm : Form
     {
         private Point lastPoint;
-        private Db db = new Db();
+        private SqlServer sqlServer = new SqlServer();
 
         public LoginForm()
         {
             InitializeComponent();
-            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabDb);
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -41,15 +41,27 @@ namespace TestSql2
             }
         }
 
-
-        private void buttonConnect_Click(object sender, EventArgs e)
+        private void buttonConnectDisconnect_Click(object sender, EventArgs e)
         {
-            textBox1.Text = db.Open(String.Format("Server=" + textBoxHost.Text
-                + ";Database=" + textBoxDatabase.Text
-                + ";port=" + textBoxPort.Text
-                + ";User Id=" + textBoxUsername.Text
-                + ";password=" + textBoxPassword.Text));
-
+            if (!sqlServer.connectionIsOpened())
+            {
+                if (sqlServer.OpenConnection(textBoxHost.Text, textBoxPort.Text, textBoxUsername.Text, textBoxPassword.Text, out string state))
+                {
+                    buttonConnectDisconnect.Text = "Disconnect";
+                    tabControl1.TabPages.Add(tabDb);
+                    tabControl1.SelectedTab = tabDb;
+                }
+                textBoxState.Text = state;
+            }
+            else
+            {
+                if (sqlServer.CloseConnection(out string state))
+                {
+                    buttonConnectDisconnect.Text = "Connect";
+                    tabControl1.TabPages.Remove(tabDb);
+                }
+                textBoxState.Text = state;
+            }
         }
 
         private void textBoxPort_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,6 +70,33 @@ namespace TestSql2
 
             if (!Char.IsDigit(number) && e.KeyChar != '\b')
                 e.Handled = true;
+        }
+
+        private void buttonRefreshDatabase_Click(object sender, EventArgs e)
+        {
+            comboBoxDatabase.Items.Clear();
+
+            sqlServer.GetDatabaseList(out List<string> databases);
+            foreach (string database in databases)
+                comboBoxDatabase.Items.Add(database);
+            comboBoxDatabase.SelectedIndex = 0;
+        }
+
+        private void buttonOpenDatabase_Click(object sender, EventArgs e)
+        {
+            if (sqlServer.OpenDatabase(comboBoxDatabase.Text, out string state))
+                Console.WriteLine("!!!");
+            textBoxState.Text = state;
+        }
+
+        private void buttonRefreshTable_Click(object sender, EventArgs e)
+        {
+            comboBoxTable.Items.Clear();
+
+            sqlServer.GetTableList(out List<string> databases);
+            foreach (string database in databases)
+                comboBoxTable.Items.Add(database);
+            comboBoxTable.SelectedIndex = 0;
         }
     }
 }
