@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSql.Properties {
+namespace TestSql2.Properties {
     using System;
     
     

@@ -1,5 +1,5 @@
 ﻿
-namespace TestSql
+namespace TestSql1
 {
     partial class RegistrationForm
     {
@@ -131,7 +131,7 @@ namespace TestSql
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::TestSql.Properties.Resources._lock;
+            this.pictureBox1.Image = global::TestSql2.Properties.Resources._lock;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 64);
@@ -169,7 +169,7 @@ namespace TestSql
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = global::TestSql.Properties.Resources.user;
+            this.pictureBox3.Image = global::TestSql2.Properties.Resources.user;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(71, 64);

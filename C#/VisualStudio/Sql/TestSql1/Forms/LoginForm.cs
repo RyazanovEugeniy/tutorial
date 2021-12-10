@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestSql
+namespace TestSql1
 {
     public partial class LoginForm : Form
     {
