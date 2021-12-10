@@ -1,11 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestSql2
+namespace TestSql1
 {
     class SqlServer
     {
@@ -124,6 +125,15 @@ namespace TestSql2
             }
             else
                 return false;
+        }
+
+        public bool ShowTable(string table, out DataSet dataSet)
+        {
+            dataSet = new DataSet();
+
+            new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection).Fill(dataSet);
+
+            return true;
         }
     }
 }

@@ -1,15 +1,15 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestSql2
+namespace TestSql1
 {
     public partial class LoginForm : Form
     {
@@ -97,6 +97,13 @@ namespace TestSql2
             foreach (string database in databases)
                 comboBoxTable.Items.Add(database);
             comboBoxTable.SelectedIndex = 0;
+        }
+
+        private void buttonShowTable_Click(object sender, EventArgs e)
+        {
+            sqlServer.ShowTable(comboBoxTable.Text, out DataSet dataset);
+
+            dataGridViewTable.DataSource = dataset.Tables[0];
         }
     }
 }

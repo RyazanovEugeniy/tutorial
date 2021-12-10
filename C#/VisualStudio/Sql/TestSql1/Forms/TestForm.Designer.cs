@@ -1,5 +1,5 @@
 ﻿
-namespace TestSql2
+namespace TestSql1
 {
     partial class LoginForm
     {
@@ -31,11 +31,16 @@ namespace TestSql2
         {
             this.buttonClose = new System.Windows.Forms.Button();
             this.tabDb = new System.Windows.Forms.TabPage();
+            this.dataGridViewTable = new System.Windows.Forms.DataGridView();
+            this.buttonOpenTable = new System.Windows.Forms.Button();
+            this.buttonRefreshTable = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxTable = new System.Windows.Forms.ComboBox();
+            this.buttonOpenDatabase = new System.Windows.Forms.Button();
             this.buttonRefreshDatabase = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxDatabase = new System.Windows.Forms.ComboBox();
             this.tabServer = new System.Windows.Forms.TabPage();
-            this.textBoxState = new System.Windows.Forms.TextBox();
             this.buttonConnectDisconnect = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxPort = new System.Windows.Forms.TextBox();
@@ -46,13 +51,10 @@ namespace TestSql2
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxState = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.buttonOpenDatabase = new System.Windows.Forms.Button();
-            this.buttonOpenTable = new System.Windows.Forms.Button();
-            this.buttonRefreshTable = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxTable = new System.Windows.Forms.ComboBox();
             this.tabDb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.tabServer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -71,6 +73,7 @@ namespace TestSql2
             // 
             // tabDb
             // 
+            this.tabDb.Controls.Add(this.dataGridViewTable);
             this.tabDb.Controls.Add(this.buttonOpenTable);
             this.tabDb.Controls.Add(this.buttonRefreshTable);
             this.tabDb.Controls.Add(this.label6);
@@ -86,6 +89,64 @@ namespace TestSql2
             this.tabDb.TabIndex = 1;
             this.tabDb.Text = "Database";
             this.tabDb.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTable
+            // 
+            this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTable.Location = new System.Drawing.Point(116, 132);
+            this.dataGridViewTable.Name = "dataGridViewTable";
+            this.dataGridViewTable.Size = new System.Drawing.Size(315, 150);
+            this.dataGridViewTable.TabIndex = 8;
+            // 
+            // buttonOpenTable
+            // 
+            this.buttonOpenTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpenTable.Location = new System.Drawing.Point(466, 61);
+            this.buttonOpenTable.Name = "buttonOpenTable";
+            this.buttonOpenTable.Size = new System.Drawing.Size(102, 27);
+            this.buttonOpenTable.TabIndex = 7;
+            this.buttonOpenTable.Text = "Show";
+            this.buttonOpenTable.UseVisualStyleBackColor = true;
+            this.buttonOpenTable.Click += new System.EventHandler(this.buttonShowTable_Click);
+            // 
+            // buttonRefreshTable
+            // 
+            this.buttonRefreshTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefreshTable.Location = new System.Drawing.Point(358, 61);
+            this.buttonRefreshTable.Name = "buttonRefreshTable";
+            this.buttonRefreshTable.Size = new System.Drawing.Size(102, 27);
+            this.buttonRefreshTable.TabIndex = 6;
+            this.buttonRefreshTable.Text = "Refresh";
+            this.buttonRefreshTable.UseVisualStyleBackColor = true;
+            this.buttonRefreshTable.Click += new System.EventHandler(this.buttonRefreshTable_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "ChooseTable";
+            // 
+            // comboBoxTable
+            // 
+            this.comboBoxTable.FormattingEnabled = true;
+            this.comboBoxTable.Location = new System.Drawing.Point(153, 61);
+            this.comboBoxTable.Name = "comboBoxTable";
+            this.comboBoxTable.Size = new System.Drawing.Size(199, 27);
+            this.comboBoxTable.TabIndex = 4;
+            // 
+            // buttonOpenDatabase
+            // 
+            this.buttonOpenDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpenDatabase.Location = new System.Drawing.Point(466, 19);
+            this.buttonOpenDatabase.Name = "buttonOpenDatabase";
+            this.buttonOpenDatabase.Size = new System.Drawing.Size(102, 27);
+            this.buttonOpenDatabase.TabIndex = 3;
+            this.buttonOpenDatabase.Text = "Open";
+            this.buttonOpenDatabase.UseVisualStyleBackColor = true;
+            this.buttonOpenDatabase.Click += new System.EventHandler(this.buttonOpenDatabase_Click);
             // 
             // buttonRefreshDatabase
             // 
@@ -126,17 +187,6 @@ namespace TestSql2
             this.tabServer.TabIndex = 0;
             this.tabServer.Text = "Server";
             this.tabServer.UseVisualStyleBackColor = true;
-            // 
-            // textBoxState
-            // 
-            this.textBoxState.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxState.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxState.Location = new System.Drawing.Point(0, 467);
-            this.textBoxState.Multiline = true;
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.ReadOnly = true;
-            this.textBoxState.Size = new System.Drawing.Size(800, 75);
-            this.textBoxState.TabIndex = 6;
             // 
             // buttonConnectDisconnect
             // 
@@ -257,6 +307,17 @@ namespace TestSql2
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
+            // textBoxState
+            // 
+            this.textBoxState.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxState.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxState.Location = new System.Drawing.Point(0, 467);
+            this.textBoxState.Multiline = true;
+            this.textBoxState.Name = "textBoxState";
+            this.textBoxState.ReadOnly = true;
+            this.textBoxState.Size = new System.Drawing.Size(800, 75);
+            this.textBoxState.TabIndex = 6;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabServer);
@@ -269,55 +330,6 @@ namespace TestSql2
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 467);
             this.tabControl1.TabIndex = 1;
-            // 
-            // buttonOpenDatabase
-            // 
-            this.buttonOpenDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenDatabase.Location = new System.Drawing.Point(466, 19);
-            this.buttonOpenDatabase.Name = "buttonOpenDatabase";
-            this.buttonOpenDatabase.Size = new System.Drawing.Size(102, 27);
-            this.buttonOpenDatabase.TabIndex = 3;
-            this.buttonOpenDatabase.Text = "Open";
-            this.buttonOpenDatabase.UseVisualStyleBackColor = true;
-            this.buttonOpenDatabase.Click += new System.EventHandler(this.buttonOpenDatabase_Click);
-            // 
-            // buttonOpenTable
-            // 
-            this.buttonOpenTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenTable.Location = new System.Drawing.Point(466, 61);
-            this.buttonOpenTable.Name = "buttonOpenTable";
-            this.buttonOpenTable.Size = new System.Drawing.Size(102, 27);
-            this.buttonOpenTable.TabIndex = 7;
-            this.buttonOpenTable.Text = "Open";
-            this.buttonOpenTable.UseVisualStyleBackColor = true;
-            // 
-            // buttonRefreshTable
-            // 
-            this.buttonRefreshTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshTable.Location = new System.Drawing.Point(358, 61);
-            this.buttonRefreshTable.Name = "buttonRefreshTable";
-            this.buttonRefreshTable.Size = new System.Drawing.Size(102, 27);
-            this.buttonRefreshTable.TabIndex = 6;
-            this.buttonRefreshTable.Text = "Refresh";
-            this.buttonRefreshTable.UseVisualStyleBackColor = true;
-            this.buttonRefreshTable.Click += new System.EventHandler(this.buttonRefreshTable_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 19);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "ChooseTable";
-            // 
-            // comboBoxTable
-            // 
-            this.comboBoxTable.FormattingEnabled = true;
-            this.comboBoxTable.Location = new System.Drawing.Point(153, 61);
-            this.comboBoxTable.Name = "comboBoxTable";
-            this.comboBoxTable.Size = new System.Drawing.Size(199, 27);
-            this.comboBoxTable.TabIndex = 4;
             // 
             // LoginForm
             // 
@@ -336,6 +348,7 @@ namespace TestSql2
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.tabDb.ResumeLayout(false);
             this.tabDb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.tabServer.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -370,6 +383,7 @@ namespace TestSql2
         private System.Windows.Forms.Button buttonRefreshTable;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxTable;
+        private System.Windows.Forms.DataGridView dataGridViewTable;
     }
 }
 
