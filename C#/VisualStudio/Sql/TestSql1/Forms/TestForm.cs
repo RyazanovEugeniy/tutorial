@@ -26,20 +26,6 @@ namespace TestSql1
             Application.Exit();
         }
 
-        private void LoginForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-
-        private void LoginForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
         private void buttonConnectDisconnect_Click(object sender, EventArgs e)
         {
             if (!sqlServer.connectionIsOpened())
@@ -89,6 +75,7 @@ namespace TestSql1
                 buttonOpenDatabase.Enabled = false;
                 comboBoxDatabase.Enabled = false;
             }
+
             textBoxState.Text = status;
         }
 
@@ -96,10 +83,14 @@ namespace TestSql1
         {
             comboBoxTable.Items.Clear();
 
-            sqlServer.GetTableList(out List<string> databases);
-            foreach (string database in databases)
-                comboBoxTable.Items.Add(database);
-            comboBoxTable.SelectedIndex = 0;
+            if (sqlServer.GetTableList(out List<string> tables, out string status))
+            {
+                foreach (string table in tables)
+                    comboBoxTable.Items.Add(table);
+                comboBoxTable.SelectedIndex = 0;
+            }
+
+            textBoxState.Text = status;
         }
 
         private void buttonShowTable_Click(object sender, EventArgs e)
@@ -125,6 +116,20 @@ namespace TestSql1
             parameter.Direction = ParameterDirection.Output;
 
             adapter.Update(ds);*/
+        }
+
+        private void tableLayoutBase_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void tableLayoutBase_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
         }
     }
 }

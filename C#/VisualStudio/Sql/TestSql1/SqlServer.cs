@@ -62,25 +62,25 @@ namespace TestSql1
 
         public bool OpenDatabase(string database, out string status)
         {
-            if (database != string.Empty)
+            if (database == string.Empty)
             {
-                try
-                {
-                    Console.WriteLine(database);
-                    new MySqlCommand(String.Format("use {0};", database), connection).ExecuteNonQuery();
-                    status = "Database is open";
-                    databaseIsOpened = true; 
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    status = "Error: " + e.Message;
-                }
-            }
-            else
                 status = "Error: Database not choosen";
+                return false;
+            }
 
-            return false;
+            try
+            {
+                Console.WriteLine(database);
+                new MySqlCommand(String.Format("use {0};", database), connection).ExecuteNonQuery();
+                status = "Database is open";
+                databaseIsOpened = true; 
+                return true;
+            }
+            catch (Exception e)
+            {
+                status = "Error: " + e.Message;
+                return false;
+            }
         }
 
         public bool GetDatabaseList(out List<string> databaseList)
@@ -103,11 +103,17 @@ namespace TestSql1
                 return false;
         }
 
-        public bool GetTableList(out List<string> tableList)
+        public bool GetTableList(out List<string> tableList, out string status)
         {
             tableList = new List<string>();
 
-            if (connection.State == ConnectionState.Open)
+            if (!databaseIsOpened)
+            {
+                status = "Error: Database is not opened";
+                return false;
+            }
+
+            try
             {
                 MySqlDataReader reader = new MySqlCommand(String.Format("show tables;"), connection).ExecuteReader();
 
@@ -115,34 +121,43 @@ namespace TestSql1
                 {
                     tableList.Add(reader.GetString(0));
                 }
-
                 reader.Close();
+                status = "Get table list";
                 return true;
             }
-            else
+            catch (Exception e)
+            {
+                status = "Error: " + e.Message;
                 return false;
+            }
         }
 
         public bool GetTable(string table, out DataSet dataSet, out string status)
         {
             dataSet = new DataSet();
 
-            if (databaseIsOpened)
+            if (!databaseIsOpened)
             {
-                try
-                {
-                    new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection).Fill(dataSet);
-
-                    status = "Table displayed ";
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    status = "Error: " + e.Message;
-                }
-            }
-            else
                 status = "Error: Database is not opened";
+                return false;
+            }
+
+            if (table == string.Empty)
+            {
+                status = "Error: Table not choosen";
+                return false;
+            }
+
+            try
+            {
+                new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection).Fill(dataSet);
+                status = "Table displayed ";
+                return true;
+            }
+            catch (Exception e)
+            {
+                status = "Error: " + e.Message;
+            }
 
             return false;
         }
