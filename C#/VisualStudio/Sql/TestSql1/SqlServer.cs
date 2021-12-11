@@ -182,15 +182,6 @@ namespace TestSql1
 
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(adapter);
 
-                adapter.InsertCommand = new MySqlCommand(String.Format("insert into {0} (login, pass) values (@login, @pass)", table), connection);
-                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@login", MySqlDbType.VarChar, 255, "login"));
-                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@pass", MySqlDbType.VarChar, 255, "pass"));
-
-                MySqlParameter parameter = adapter.InsertCommand.Parameters.Add("@id", MySqlDbType.Int32, 0, "id");
-                parameter.Direction = ParameterDirection.Output;
-
-                Console.WriteLine(adapter.InsertCommand.CommandText);
-
                 adapter.Update(dataSet);
                 status = "Table updated";
                 return true;
