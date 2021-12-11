@@ -121,7 +121,7 @@ namespace TestSql1
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.24454F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.75546F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxDatabase, 1, 0);
@@ -146,7 +146,7 @@ namespace TestSql1
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 42);
+            this.label3.Size = new System.Drawing.Size(154, 42);
             this.label3.TabIndex = 1;
             this.label3.Text = "ChooseDatabase";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +158,7 @@ namespace TestSql1
             this.label6.Location = new System.Drawing.Point(3, 51);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 43);
+            this.label6.Size = new System.Drawing.Size(154, 43);
             this.label6.TabIndex = 5;
             this.label6.Text = "ChooseTable";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +168,7 @@ namespace TestSql1
             this.comboBoxDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxDatabase.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxDatabase.FormattingEnabled = true;
-            this.comboBoxDatabase.Location = new System.Drawing.Point(164, 7);
+            this.comboBoxDatabase.Location = new System.Drawing.Point(163, 7);
             this.comboBoxDatabase.Name = "comboBoxDatabase";
             this.comboBoxDatabase.Size = new System.Drawing.Size(277, 33);
             this.comboBoxDatabase.TabIndex = 0;
@@ -177,9 +177,9 @@ namespace TestSql1
             // 
             this.buttonOpenTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonOpenTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenTable.Location = new System.Drawing.Point(575, 51);
+            this.buttonOpenTable.Location = new System.Drawing.Point(574, 51);
             this.buttonOpenTable.Name = "buttonOpenTable";
-            this.buttonOpenTable.Size = new System.Drawing.Size(196, 43);
+            this.buttonOpenTable.Size = new System.Drawing.Size(197, 43);
             this.buttonOpenTable.TabIndex = 7;
             this.buttonOpenTable.Text = "Show";
             this.buttonOpenTable.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@ namespace TestSql1
             // 
             this.buttonRefreshDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRefreshDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshDatabase.Location = new System.Drawing.Point(447, 3);
+            this.buttonRefreshDatabase.Location = new System.Drawing.Point(446, 3);
             this.buttonRefreshDatabase.Name = "buttonRefreshDatabase";
             this.buttonRefreshDatabase.Size = new System.Drawing.Size(122, 42);
             this.buttonRefreshDatabase.TabIndex = 2;
@@ -201,9 +201,9 @@ namespace TestSql1
             // 
             this.buttonOpenDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonOpenDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenDatabase.Location = new System.Drawing.Point(575, 3);
+            this.buttonOpenDatabase.Location = new System.Drawing.Point(574, 3);
             this.buttonOpenDatabase.Name = "buttonOpenDatabase";
-            this.buttonOpenDatabase.Size = new System.Drawing.Size(196, 42);
+            this.buttonOpenDatabase.Size = new System.Drawing.Size(197, 42);
             this.buttonOpenDatabase.TabIndex = 3;
             this.buttonOpenDatabase.Text = "Open";
             this.buttonOpenDatabase.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@ namespace TestSql1
             // 
             this.buttonRefreshTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRefreshTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshTable.Location = new System.Drawing.Point(447, 51);
+            this.buttonRefreshTable.Location = new System.Drawing.Point(446, 51);
             this.buttonRefreshTable.Name = "buttonRefreshTable";
             this.buttonRefreshTable.Size = new System.Drawing.Size(122, 43);
             this.buttonRefreshTable.TabIndex = 6;
@@ -226,7 +226,7 @@ namespace TestSql1
             this.comboBoxTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTable.FormattingEnabled = true;
-            this.comboBoxTable.Location = new System.Drawing.Point(164, 56);
+            this.comboBoxTable.Location = new System.Drawing.Point(163, 56);
             this.comboBoxTable.Name = "comboBoxTable";
             this.comboBoxTable.Size = new System.Drawing.Size(277, 33);
             this.comboBoxTable.TabIndex = 4;
@@ -234,10 +234,10 @@ namespace TestSql1
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.buttonSaveTable, 2, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.buttonSaveTable, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 389);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -250,9 +250,9 @@ namespace TestSql1
             // 
             this.buttonSaveTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSaveTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveTable.Location = new System.Drawing.Point(583, 3);
+            this.buttonSaveTable.Location = new System.Drawing.Point(260, 3);
             this.buttonSaveTable.Name = "buttonSaveTable";
-            this.buttonSaveTable.Size = new System.Drawing.Size(188, 41);
+            this.buttonSaveTable.Size = new System.Drawing.Size(251, 41);
             this.buttonSaveTable.TabIndex = 1;
             this.buttonSaveTable.Text = "Save";
             this.buttonSaveTable.UseVisualStyleBackColor = true;

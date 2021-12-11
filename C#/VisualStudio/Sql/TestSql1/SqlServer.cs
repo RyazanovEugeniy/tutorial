@@ -179,14 +179,17 @@ namespace TestSql1
             try
             {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection);
-                MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(adapter);
-                adapter.InsertCommand = new MySqlCommand("sp_CreateUser", connection);
-                adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
-                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@login", MySqlDbType.VarChar, 50, "login"));
-                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@pass", MySqlDbType.Int32, 0, "pass"));
 
-                MySqlParameter parameter = adapter.InsertCommand.Parameters.Add("@Id", MySqlDbType.Int32, 0, "Id");
+                MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(adapter);
+
+                adapter.InsertCommand = new MySqlCommand(String.Format("insert into {0} (login, pass) values (@login, @pass)", table), connection);
+                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@login", MySqlDbType.VarChar, 255, "login"));
+                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@pass", MySqlDbType.VarChar, 255, "pass"));
+
+                MySqlParameter parameter = adapter.InsertCommand.Parameters.Add("@id", MySqlDbType.Int32, 0, "id");
                 parameter.Direction = ParameterDirection.Output;
+
+                Console.WriteLine(adapter.InsertCommand.CommandText);
 
                 adapter.Update(dataSet);
                 status = "Table updated";
