@@ -14,6 +14,7 @@ namespace TestSql1
     {
         private Point lastPoint;
         private SqlServer sqlServer = new SqlServer();
+        private DataSet dataSet;
 
         public LoginForm()
         {
@@ -95,27 +96,19 @@ namespace TestSql1
 
         private void buttonShowTable_Click(object sender, EventArgs e)
         {
-            if (sqlServer.GetTable(comboBoxTable.Text, out DataSet dataset, out string status))
+            if (sqlServer.GetTable(comboBoxTable.Text, out DataSet dataSet, out string status))
             {
-                dataGridViewTable.DataSource = dataset.Tables[0];
-                dataGridViewTable.ReadOnly = true;
+                this.dataSet = dataSet;
+                dataGridViewTable.DataSource = dataSet.Tables[0];
+                //dataGridViewTable.ReadOnly = true;
             }
             textBoxState.Text = status;
         }
 
         private void buttonSaveTable_Click(object sender, EventArgs e)
         {
-            /*MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-            commandBuilder = new SqlCommandBuilder(adapter);
-            adapter.InsertCommand = new SqlCommand("sp_CreateUser", connection);
-            adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
-            adapter.InsertCommand.Parameters.Add(new SqlParameter("@name", SqlDbType.NVarChar, 50, "Name"));
-            adapter.InsertCommand.Parameters.Add(new SqlParameter("@age", SqlDbType.Int, 0, "Age"));
-
-            SqlParameter parameter = adapter.InsertCommand.Parameters.Add("@Id", SqlDbType.Int, 0, "Id");
-            parameter.Direction = ParameterDirection.Output;
-
-            adapter.Update(ds);*/
+            sqlServer.UpdateTable(comboBoxTable.Text, dataSet, out string status);
+            textBoxState.Text = status;
         }
 
         private void tableLayoutBase_MouseDown(object sender, MouseEventArgs e)

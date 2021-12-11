@@ -161,5 +161,42 @@ namespace TestSql1
 
             return false;
         }
+
+        public bool UpdateTable(string table, DataSet dataSet, out string status)
+        {
+            if (!databaseIsOpened)
+            {
+                status = "Error: Database is not opened";
+                return false;
+            }
+
+            if (table == string.Empty)
+            {
+                status = "Error: Table not choosen";
+                return false;
+            }
+
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection);
+                MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(adapter);
+                adapter.InsertCommand = new MySqlCommand("sp_CreateUser", connection);
+                adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
+                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@login", MySqlDbType.VarChar, 50, "login"));
+                adapter.InsertCommand.Parameters.Add(new MySqlParameter("@pass", MySqlDbType.Int32, 0, "pass"));
+
+                MySqlParameter parameter = adapter.InsertCommand.Parameters.Add("@Id", MySqlDbType.Int32, 0, "Id");
+                parameter.Direction = ParameterDirection.Output;
+
+                adapter.Update(dataSet);
+                status = "Table updated";
+                return true;
+            }
+            catch (Exception e)
+            {
+                status = "Error: " + e.Message;
+                return false;
+            }
+        }
     }
 }
