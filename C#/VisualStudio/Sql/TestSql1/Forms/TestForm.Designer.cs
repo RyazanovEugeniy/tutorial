@@ -53,19 +53,27 @@ namespace TestSql1
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveTable = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tabDb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.tabServer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonClose
             // 
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonClose.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClose.Location = new System.Drawing.Point(644, 548);
+            this.buttonClose.Location = new System.Drawing.Point(603, 3);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(144, 40);
+            this.buttonClose.Size = new System.Drawing.Size(194, 46);
             this.buttonClose.TabIndex = 0;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
@@ -73,15 +81,9 @@ namespace TestSql1
             // 
             // tabDb
             // 
+            this.tabDb.Controls.Add(this.tableLayoutPanel4);
+            this.tabDb.Controls.Add(this.tableLayoutPanel3);
             this.tabDb.Controls.Add(this.dataGridViewTable);
-            this.tabDb.Controls.Add(this.buttonOpenTable);
-            this.tabDb.Controls.Add(this.buttonRefreshTable);
-            this.tabDb.Controls.Add(this.label6);
-            this.tabDb.Controls.Add(this.comboBoxTable);
-            this.tabDb.Controls.Add(this.buttonOpenDatabase);
-            this.tabDb.Controls.Add(this.buttonRefreshDatabase);
-            this.tabDb.Controls.Add(this.label3);
-            this.tabDb.Controls.Add(this.comboBoxDatabase);
             this.tabDb.Location = new System.Drawing.Point(4, 29);
             this.tabDb.Name = "tabDb";
             this.tabDb.Padding = new System.Windows.Forms.Padding(3);
@@ -93,17 +95,18 @@ namespace TestSql1
             // dataGridViewTable
             // 
             this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTable.Location = new System.Drawing.Point(116, 132);
+            this.dataGridViewTable.Location = new System.Drawing.Point(3, 106);
             this.dataGridViewTable.Name = "dataGridViewTable";
-            this.dataGridViewTable.Size = new System.Drawing.Size(315, 150);
+            this.dataGridViewTable.Size = new System.Drawing.Size(786, 277);
             this.dataGridViewTable.TabIndex = 8;
             // 
             // buttonOpenTable
             // 
+            this.buttonOpenTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonOpenTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenTable.Location = new System.Drawing.Point(466, 61);
+            this.buttonOpenTable.Location = new System.Drawing.Point(589, 53);
             this.buttonOpenTable.Name = "buttonOpenTable";
-            this.buttonOpenTable.Size = new System.Drawing.Size(102, 27);
+            this.buttonOpenTable.Size = new System.Drawing.Size(194, 44);
             this.buttonOpenTable.TabIndex = 7;
             this.buttonOpenTable.Text = "Show";
             this.buttonOpenTable.UseVisualStyleBackColor = true;
@@ -111,10 +114,11 @@ namespace TestSql1
             // 
             // buttonRefreshTable
             // 
+            this.buttonRefreshTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRefreshTable.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshTable.Location = new System.Drawing.Point(358, 61);
+            this.buttonRefreshTable.Location = new System.Drawing.Point(461, 53);
             this.buttonRefreshTable.Name = "buttonRefreshTable";
-            this.buttonRefreshTable.Size = new System.Drawing.Size(102, 27);
+            this.buttonRefreshTable.Size = new System.Drawing.Size(122, 44);
             this.buttonRefreshTable.TabIndex = 6;
             this.buttonRefreshTable.Text = "Refresh";
             this.buttonRefreshTable.UseVisualStyleBackColor = true;
@@ -123,26 +127,32 @@ namespace TestSql1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 64);
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(3, 53);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 19);
+            this.label6.Size = new System.Drawing.Size(160, 44);
             this.label6.TabIndex = 5;
             this.label6.Text = "ChooseTable";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxTable
             // 
+            this.comboBoxTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTable.FormattingEnabled = true;
-            this.comboBoxTable.Location = new System.Drawing.Point(153, 61);
+            this.comboBoxTable.Location = new System.Drawing.Point(169, 58);
             this.comboBoxTable.Name = "comboBoxTable";
-            this.comboBoxTable.Size = new System.Drawing.Size(199, 27);
+            this.comboBoxTable.Size = new System.Drawing.Size(286, 33);
             this.comboBoxTable.TabIndex = 4;
             // 
             // buttonOpenDatabase
             // 
+            this.buttonOpenDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonOpenDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenDatabase.Location = new System.Drawing.Point(466, 19);
+            this.buttonOpenDatabase.Location = new System.Drawing.Point(589, 3);
             this.buttonOpenDatabase.Name = "buttonOpenDatabase";
-            this.buttonOpenDatabase.Size = new System.Drawing.Size(102, 27);
+            this.buttonOpenDatabase.Size = new System.Drawing.Size(194, 44);
             this.buttonOpenDatabase.TabIndex = 3;
             this.buttonOpenDatabase.Text = "Open";
             this.buttonOpenDatabase.UseVisualStyleBackColor = true;
@@ -150,10 +160,11 @@ namespace TestSql1
             // 
             // buttonRefreshDatabase
             // 
+            this.buttonRefreshDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRefreshDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshDatabase.Location = new System.Drawing.Point(358, 19);
+            this.buttonRefreshDatabase.Location = new System.Drawing.Point(461, 3);
             this.buttonRefreshDatabase.Name = "buttonRefreshDatabase";
-            this.buttonRefreshDatabase.Size = new System.Drawing.Size(102, 27);
+            this.buttonRefreshDatabase.Size = new System.Drawing.Size(122, 44);
             this.buttonRefreshDatabase.TabIndex = 2;
             this.buttonRefreshDatabase.Text = "Refresh";
             this.buttonRefreshDatabase.UseVisualStyleBackColor = true;
@@ -162,18 +173,23 @@ namespace TestSql1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 22);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 19);
+            this.label3.Size = new System.Drawing.Size(160, 44);
             this.label3.TabIndex = 1;
             this.label3.Text = "ChooseDatabase";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxDatabase
             // 
+            this.comboBoxDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxDatabase.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxDatabase.FormattingEnabled = true;
-            this.comboBoxDatabase.Location = new System.Drawing.Point(153, 19);
+            this.comboBoxDatabase.Location = new System.Drawing.Point(169, 8);
             this.comboBoxDatabase.Name = "comboBoxDatabase";
-            this.comboBoxDatabase.Size = new System.Drawing.Size(199, 27);
+            this.comboBoxDatabase.Size = new System.Drawing.Size(286, 33);
             this.comboBoxDatabase.TabIndex = 0;
             // 
             // tabServer
@@ -309,13 +325,13 @@ namespace TestSql1
             // 
             // textBoxState
             // 
-            this.textBoxState.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxState.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxState.Location = new System.Drawing.Point(0, 467);
             this.textBoxState.Multiline = true;
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.ReadOnly = true;
-            this.textBoxState.Size = new System.Drawing.Size(800, 75);
+            this.textBoxState.Size = new System.Drawing.Size(800, 133);
             this.textBoxState.TabIndex = 6;
             // 
             // tabControl1
@@ -331,15 +347,81 @@ namespace TestSql1
             this.tabControl1.Size = new System.Drawing.Size(800, 467);
             this.tabControl1.TabIndex = 1;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.buttonClose, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 548);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(800, 52);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.buttonSaveTable, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 386);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(786, 45);
+            this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // buttonSaveTable
+            // 
+            this.buttonSaveTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSaveTable.Location = new System.Drawing.Point(592, 3);
+            this.buttonSaveTable.Name = "buttonSaveTable";
+            this.buttonSaveTable.Size = new System.Drawing.Size(191, 39);
+            this.buttonSaveTable.TabIndex = 1;
+            this.buttonSaveTable.Text = "Save";
+            this.buttonSaveTable.UseVisualStyleBackColor = true;
+            this.buttonSaveTable.Click += new System.EventHandler(this.buttonSaveTable_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.24454F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.75546F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxDatabase, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonOpenTable, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.buttonRefreshDatabase, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonOpenDatabase, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonRefreshTable, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxTable, 1, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(786, 100);
+            this.tableLayoutPanel4.TabIndex = 10;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.textBoxState);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -347,12 +429,15 @@ namespace TestSql1
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.tabDb.ResumeLayout(false);
-            this.tabDb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.tabServer.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,6 +469,10 @@ namespace TestSql1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxTable;
         private System.Windows.Forms.DataGridView dataGridViewTable;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button buttonSaveTable;
     }
 }
 

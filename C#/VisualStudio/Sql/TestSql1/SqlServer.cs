@@ -11,10 +11,11 @@ namespace TestSql1
     class SqlServer
     {
         private MySqlConnection connection = new MySqlConnection();
+        private bool databaseIsOpened = false;
 
-        public bool OpenConnection(string host, string port, string username, string password, out string state)
+        public bool OpenConnection(string host, string port, string username, string password, out string status)
         {
-            if (connection.State != System.Data.ConnectionState.Open)
+            if (connection.State != ConnectionState.Open)
             {
                 connection.ConnectionString = String.Format("Server=" + host + ";port=" + port
                                                     + ";User Id=" + username + ";password=" + password);
@@ -22,39 +23,63 @@ namespace TestSql1
                 try
                 {
                     connection.Open();
-                    state = "Connection is open";
+                    status = "Connection is open";
                     return true;
                 }
                 catch (Exception e)
                 {
-                    state = "Error: " + e.Message;
+                    status = "Error: " + e.Message;
                 }
             }
             else
-                state = "Connection is already open";
+                status = "Error: Connection is already open";
             return false;
 
         }
 
-        public bool connectionIsOpened() => connection.State == System.Data.ConnectionState.Open;
+        public bool connectionIsOpened() => connection.State == ConnectionState.Open;
 
-        public bool CloseConnection(out string state)
+        public bool CloseConnection(out string status)
         {
-            if (connection.State != System.Data.ConnectionState.Closed)
+            if (connection.State != ConnectionState.Closed)
             {
                 try
                 {
                     connection.Close();
-                    state = "Connection is closed";
+                    status = "Connection is closed";
                     return true;
                 }
                 catch (Exception e)
                 {
-                    state = "Error: " + e.Message;
+                    status = "Error: " + e.Message;
                 }
             }
             else
-                state = "Connection is already closed";
+                status = "Error: Connection is already closed";
+
+            return false;
+        }
+
+        public bool OpenDatabase(string database, out string status)
+        {
+            if (database != string.Empty)
+            {
+                try
+                {
+                    Console.WriteLine(database);
+                    new MySqlCommand(String.Format("use {0};", database), connection).ExecuteNonQuery();
+                    status = "Database is open";
+                    databaseIsOpened = true; 
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    status = "Error: " + e.Message;
+                }
+            }
+            else
+                status = "Error: Database not choosen";
+
             return false;
         }
 
@@ -62,7 +87,7 @@ namespace TestSql1
         {
             databaseList = new List<string>();
 
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
                 MySqlDataReader reader = new MySqlCommand(String.Format("show databases;"), connection).ExecuteReader();
 
@@ -78,40 +103,11 @@ namespace TestSql1
                 return false;
         }
 
-        public bool OpenDatabase(string database, out string state)
-        {
-            if (connection.State == System.Data.ConnectionState.Open)
-            {
-                try
-                {
-                    MySqlDataReader reader = new MySqlCommand(String.Format("use {0};", database), connection).ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        Console.WriteLine(reader.GetString(0));
-                    }
-
-                    reader.Close();
-
-                    state = "Database is open";
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    state = "Error: " + e.Message;
-                }
-            }
-            else
-                state = "Connection is closed";
-
-            return false;
-        }
-
         public bool GetTableList(out List<string> tableList)
         {
             tableList = new List<string>();
 
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
                 MySqlDataReader reader = new MySqlCommand(String.Format("show tables;"), connection).ExecuteReader();
 
@@ -127,13 +123,28 @@ namespace TestSql1
                 return false;
         }
 
-        public bool ShowTable(string table, out DataSet dataSet)
+        public bool GetTable(string table, out DataSet dataSet, out string status)
         {
             dataSet = new DataSet();
 
-            new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection).Fill(dataSet);
+            if (databaseIsOpened)
+            {
+                try
+                {
+                    new MySqlDataAdapter(String.Format("SELECT * FROM {0};", table), connection).Fill(dataSet);
 
-            return true;
+                    status = "Table displayed ";
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    status = "Error: " + e.Message;
+                }
+            }
+            else
+                status = "Error: Database is not opened";
+
+            return false;
         }
     }
 }
