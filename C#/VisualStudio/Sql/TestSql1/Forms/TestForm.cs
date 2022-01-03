@@ -101,6 +101,7 @@ namespace TestSql1
                 this.dataSet = dataSet;
                 dataGridViewTable.DataSource = dataSet.Tables[0];
             }
+
             textBoxState.Text = status;
         }
 
