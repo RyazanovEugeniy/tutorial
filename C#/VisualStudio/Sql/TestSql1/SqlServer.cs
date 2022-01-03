@@ -17,8 +17,10 @@ namespace TestSql1
         {
             if (connection.State != ConnectionState.Open)
             {
-                connection.ConnectionString = String.Format("Server=" + host + ";port=" + port
-                                                    + ";User Id=" + username + ";password=" + password);
+                connection.ConnectionString = String.Format("Server=" + host
+                                                            + ";port=" + port
+                                                            + ";User Id=" + username 
+                                                            + ";password=" + password);
 
                 try
                 {
