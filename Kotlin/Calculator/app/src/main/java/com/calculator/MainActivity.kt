@@ -79,12 +79,18 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonChangeSign?.setOnClickListener {
             if (sign == ' ')
             {
-                a = (a.toDouble() * (-1.0)).toString()
+                a = if (!a.contains('-'))
+                    "-$a"
+                else
+                    a.filter { it != '-' }
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                b = (b.toDouble() * (-1.0)).toString()
+                b= if (!b.contains('-'))
+                    "-$b"
+                else
+                    b.filter { it != '-' }
                 bindingClass?.textViewDisplay?.text = b
             }
         }
