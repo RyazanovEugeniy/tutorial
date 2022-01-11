@@ -98,16 +98,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonZero?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "0"
-                }
                 else
                     a = "0"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "0"
                 else
                     b = "0"
@@ -118,16 +117,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonOne?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "1"
-                }
                 else
                     a = "1"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "1"
                 else
                     b = "1"
@@ -138,16 +136,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonTwo?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "2"
-                }
                 else
                     a = "2"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "2"
                 else
                     b = "2"
@@ -158,16 +155,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonThree?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "3"
-                }
                 else
                     a = "3"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "3"
                 else
                     b = "3"
@@ -178,16 +174,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonFour?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "4"
-                }
                 else
                     a = "4"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "4"
                 else
                     b = "4"
@@ -198,16 +193,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonFive?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "5"
-                }
                 else
                     a = "5"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "5"
                 else
                     b = "5"
@@ -218,16 +212,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonSix?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "6"
-                }
                 else
                     a = "6"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "6"
                 else
                     b = "6"
@@ -238,16 +231,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonSeven?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "7"
-                }
                 else
                     a = "7"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "7"
                 else
                     b = "7"
@@ -258,16 +250,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonEight?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "8"
-                }
                 else
                     a = "8"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "8"
                 else
                     b = "8"
@@ -278,16 +269,15 @@ class MainActivity : AppCompatActivity() {
         bindingClass?.buttonNine?.setOnClickListener {
             if (sign == ' ')
             {
-                if (!finish && a != "0") {
+                if (!finish && a != "0" && a != "-0")
                     a += "9"
-                }
                 else
                     a = "9"
                 bindingClass?.textViewDisplay?.text = a
             }
             else
             {
-                if (b != "0")
+                if (b != "0" && b != "-0")
                     b += "9"
                 else
                     b = "9"
