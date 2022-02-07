@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterInheritance", "AdapterInheritance\AdapterInheritance.csproj", "{C7DD876D-F232-4ADE-939D-3930DEF5A6D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterAssociation", "AdapterAssociation\AdapterAssociation.csproj", "{D28CB889-0206-4883-A31D-DF7A070E09CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterAssociation", "AdapterAssociation\AdapterAssociation.csproj", "{D28CB889-0206-4883-A31D-DF7A070E09CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{6024324F-5AC8-4333-8051-34BD371B2F88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{6024324F-5AC8-4333-8051-34BD371B2F88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{73B7E8F3-134F-4EE6-9033-541987090C02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composite", "Composite\Composite.csproj", "{73B7E8F3-134F-4EE6-9033-541987090C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{AB82270C-B821-4471-A032-2C09EB5441BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{AB82270C-B821-4471-A032-2C09EB5441BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{3EA38294-4859-4E8F-9925-E889B75DCADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "Facade\Facade.csproj", "{3EA38294-4859-4E8F-9925-E889B75DCADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight", "Flyweight\Flyweight.csproj", "{C5F7D389-72D5-4977-BE48-FCFFF19D08A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3EA38294-4859-4E8F-9925-E889B75DCADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EA38294-4859-4E8F-9925-E889B75DCADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EA38294-4859-4E8F-9925-E889B75DCADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F7D389-72D5-4977-BE48-FCFFF19D08A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F7D389-72D5-4977-BE48-FCFFF19D08A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F7D389-72D5-4977-BE48-FCFFF19D08A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F7D389-72D5-4977-BE48-FCFFF19D08A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
